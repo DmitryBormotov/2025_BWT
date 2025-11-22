@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>DOM_JS. Считываем информацию из DOM</title>
+</head>
+
+<body>
+
+    <h3><b>Навигация</b></h3>
+  
+  <ul>
+    <li><a href="../01/index.html" target="_self">Паспорт</a>
+    <li><a href="../02/index.html" target="_self">Изменяем данные на латиницу</a>
+    <li><a href="../03/index.html" target="_self">Алгоритмическая задача</a>
+</ul>
+
+    <p></p>
+    <hr>
+    <p></p>
+    
+    <h3 align="center">Данные паспорта</h3>
+
+    <table align="center" cellspacing="0" cellpadding="5" border="1" width="700">
+
+    <tr>
+      <td colspan="2" align="center">
+        <b> РОССИЙСКАЯ ФЕДЕРАЦИЯ </b>
+      </td>
+        
+      <td rowspan="6" style="writing-mode: vertical-rl; text-orientation: mixed; text-align:center;">
+          60   13   110011 
+      </td>  
+    </tr>
+
+     <tr>
+        <td colspan="2" align="center">
+            Паспорт выдан: ГУ МВД РОССИИ ПО РОСТОВСКОЙ ОБЛАСТИ
+        </td>
+      </tr>
+
+    <tr>
+      <td colspan="2" height="15"></td>
+    </tr>
+        
+
+
+    <tr>
+      <td>
+          Дата выдачи: 20.04.2023
+      </td>
+        <td>
+            Код подразделения: 228-223
+        </td>
+    </tr>
+
+    <tr>
+        <td rowspan="2" align="center">
+            <img alt="Печать" src="./XXL_height.jfif" width="80px">
+        </td>
+
+        <td height="50px"></td>
+        
+    <tr>
+        <td align="center">
+            Личная подпись
+        </td>
+
+    </tr>
+
+    </table>
+
+
+  <p></p>  
+    
+    <table align="center" cellspacing="0" cellpadding="5" border="1" width="700">
+
+    <tr>
+       <td rowspan="7" align="center">
+           <img alt="Фото" src="./main_photo.jpg" width="100px">
+       </td>
+      <td colspan="2">
+        Фамилия: <span id="second_name"> БОРМОТОВ </span>
+      </td>
+        
+      <td rowspan="7" style="writing-mode: vertical-rl; text-orientation: mixed; text-align:center;">
+          60   13   110011 
+      </td>  
+    </tr>
+
+     <tr>
+        <td colspan="2" height="15"></td>
+      </tr>
+
+    <tr>
+      <td colspan="2">
+          Имя:<span id="first_name"> ДМИТРИЙ </span>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+          Отчество: РУСЛАНОВИЧ
+      </td>
+    </tr>
+
+    <tr>
+        <td>
+            Пол: МУЖ.
+        </td>
+        <td>
+            Дата рождения:<span id="date_of_birthday"> 27.05.2007 </span>
+        </td>
+
+
+    <tr>
+      <td colspan="2">
+          Место рождения: ДОНЕЦКАЯ ОБЛ.
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+          Г. КОМСОМОЛЬСКОЕ
+      </td>
+    </tr>
+
+    </table>
+
+<p align="center">
+  Изменить кириллицу на латиницу: <span id="for_click"> клик </span>
+</p>
+</body>
