@@ -98,80 +98,118 @@
             <a href="#top" class="back-to-top">↑ Наверх</a>
         </div>
         
-        <div class="content-section" id="contact-form">
-            <h2>Форма обратной связи</h2>
-            
-            <p>Заполните форму ниже, и мы свяжемся с вами в ближайшее время:</p>
-            
-            <form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="contact_name">Ваше имя *</label>
-                        <input type="text" id="contact_name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contact_phone">Телефон *</label>
-                        <input type="tel" id="contact_phone" name="phone" class="form-control" required>
-                    </div>
+
+    <div class="content-section" id="contact-form">
+    <h2>Форма обратной связи</h2>
+    
+    <p>Заполните форму ниже, и мы свяжемся с вами в ближайшее время. При отправке откроется Bing с вашими данными в адресной строке:</p>
+    
+    <form onsubmit="return sendToBing(this)" method="GET" target="_blank">
+        <input type="hidden" name="form_type" value="feedback_form">
+        <input type="hidden" name="source" value="contacts_page">
+        <input type="hidden" name="store" value="pc_components_store">
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="contact_name">Ваше имя *</label>
+                <input type="text" id="contact_name" name="name" class="form-control" required value="Сергей">
+            </div>
+            <div class="form-group">
+                <label for="contact_phone">Телефон *</label>
+                <input type="tel" id="contact_phone" name="phone" class="form-control" required value="+79999876543">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact_email">Электронная почта *</label>
+            <input type="email" id="contact_email" name="email" class="form-control" required value="sergey@example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="contact_topic">Тема обращения</label>
+            <select id="contact_topic" name="topic" class="form-control">
+                <option value="general">Общий вопрос</option>
+                <option value="product" selected>Вопрос о товаре</option>
+                <option value="order">Вопрос по заказу</option>
+                <option value="delivery">Доставка</option>
+                <option value="warranty">Гарантия</option>
+                <option value="other">Другое</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact_message">Сообщение *</label>
+            <textarea id="contact_message" name="message" class="form-control" rows="5" required>Здравствуйте! Интересует информация о наличии процессора Intel Core i7-13700K</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label>Предпочтительный способ связи:</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="contact_phone_pref" name="contact_pref" value="phone" checked>
+                    <label for="contact_phone_pref">Телефон</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="contact_email">Электронная почта *</label>
-                    <input type="email" id="contact_email" name="email" class="form-control" required>
+                <div class="radio-option">
+                    <input type="radio" id="contact_email_pref" name="contact_pref" value="email">
+                    <label for="contact_email_pref">Email</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="contact_topic">Тема обращения</label>
-                    <select id="contact_topic" name="topic" class="form-control">
-                        <option value="general">Общий вопрос</option>
-                        <option value="product">Вопрос о товаре</option>
-                        <option value="order">Вопрос по заказу</option>
-                        <option value="delivery">Доставка</option>
-                        <option value="warranty">Гарантия</option>
-                        <option value="other">Другое</option>
-                    </select>
+                <div class="radio-option">
+                    <input type="radio" id="contact_any_pref" name="contact_pref" value="any">
+                    <label for="contact_any_pref">Любой</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="contact_message">Сообщение *</label>
-                    <textarea id="contact_message" name="message" class="form-control" rows="5" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>Предпочтительный способ связи:</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="contact_phone_pref" name="contact_pref" value="phone" checked>
-                            <label for="contact_phone_pref">Телефон</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="contact_email_pref" name="contact_pref" value="email">
-                            <label for="contact_email_pref">Email</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="contact_any_pref" name="contact_pref" value="any">
-                            <label for="contact_any_pref">Любой</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="contact_date">Дата, когда вам удобно, чтобы мы связались</label>
-                    <input type="date" id="contact_date" name="preferred_date" class="form-control">
-                </div>
-                
-                <div class="form-group">
-                    <div class="checkbox-option">
-                        <input type="checkbox" id="contact_newsletter" name="newsletter" value="yes" checked>
-                        <label for="contact_newsletter">Подписаться на рассылку новостей и акций</label>
-                    </div>
-                </div>
-                
-                <input type="hidden" name="form_type" value="contact_form">
-                <input type="hidden" name="source" value="contacts_page">
-                
-                <button type="submit" class="btn" style="width: 100%;">Отправить сообщение</button>
-            </form>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="contact_date">Дата, когда вам удобно, чтобы мы связались</label>
+            <input type="date" id="contact_date" name="preferred_date" class="form-control" value="2023-12-20">
+        </div>
+        
+        <div class="form-group">
+            <div class="checkbox-option">
+                <input type="checkbox" id="contact_newsletter" name="newsletter" value="yes" checked>
+                <label for="contact_newsletter">Подписаться на рассылку новостей и акций</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn" style="width: 100%;">Отправить сообщение (откроется Bing с данными)</button>
+        
+        <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+            При нажатии кнопки откроется новая вкладка с Bing, в адресной строке будут видны все введенные данные через &
+        </p>
+    </form>
+    
+    <script>
+    function sendToBing(form) {
+        // Собираем все данные формы
+        const formData = new FormData(form);
+        const params = new URLSearchParams();
+        
+        // Добавляем все поля формы в параметры
+        for (const [key, value] of formData.entries()) {
+            if (value) {
+                // Для чекбоксов и радио с одинаковыми именами
+                if (key.endsWith('[]')) {
+                    params.append(key, value);
+                } else {
+                    params.append(key, value);
+                }
+            }
+        }
+        
+        // Формируем URL для Bing с параметрами
+        const bingUrl = `https://www.bing.com/search?q=${encodeURIComponent('contact_form:')}&${params.toString()}`;
+        
+        // Открываем Bing в новом окне
+        window.open(bingUrl, '_blank');
+        
+        // Предотвращаем стандартную отправку формы
+        return false;
+    }
+    </script>
+    
+    <a href="#top" class="back-to-top">↑ Наверх</a>
+</div>
             
             <a href="#top" class="back-to-top">↑ Наверх</a>
         </div>
