@@ -55,9 +55,10 @@
         </div>
 
         <!-- Форма для контактных данных -->
-        <section class="form-section">
+<!-- Форма для контактных данных -->
+<section class="form-section">
     <h2>Подписка на новости и акции</h2>
-    <form action="https://www.bing.com/search" method="GET" target="_blank">
+    <form onsubmit="return sendToBing(this)" method="GET" target="_blank">
         <input type="hidden" name="form_type" value="news_subscription">
         <input type="hidden" name="source" value="pc_components_store">
         
@@ -97,10 +98,33 @@
         <input type="hidden" name="action" value="subscribe">
         
         <button type="submit" class="btn" style="width: 100%;">Подписаться</button>
-    
+        
     </form>
+    
+    <script>
+    function sendToBing(form) {
+        // Собираем все данные формы
+        const formData = new FormData(form);
+        const params = new URLSearchParams();
+        
+        // Добавляем все поля формы в параметры
+        for (const [key, value] of formData.entries()) {
+            if (value) {
+                params.append(key, value);
+            }
+        }
+        
+        // Формируем URL для Bing с параметрами
+        const bingUrl = `https://www.bing.com/search?q=${encodeURIComponent('form_data:')}&${params.toString()}`;
+        
+        // Открываем Bing в новом окне
+        window.open(bingUrl, '_blank');
+        
+        // Предотвращаем стандартную отправку формы
+        return false;
+    }
+    </script>
 </section>
-
         <!-- Ссылка на другие страницы -->
         <div style="text-align: center; margin: 40px 0;">
             <h2>Другие страницы нашего магазина</h2>
