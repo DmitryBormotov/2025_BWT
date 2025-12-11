@@ -64,150 +64,197 @@
         </div>
         
         <!-- Форма заказа -->
-        <div class="form-section" id="order-form">
-            <h2>Форма заказа</h2>
-            <form action="https://httpbin.org/post" method="post">
-                <!-- Скрытое поле -->
-                <input type="hidden" name="order_id" value="ORD-2023-001">
-                <input type="hidden" name="form_type" value="order_form">
-                
-                <!-- Личные данные -->
-                <h3 style="color: #3949ab; margin: 25px 0 15px;">Личные данные</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="order_lastname">Фамилия *</label>
-                        <input type="text" id="order_lastname" name="lastname" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="order_firstname">Имя *</label>
-                        <input type="text" id="order_firstname" name="firstname" class="form-control" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="order_email">Электронная почта *</label>
-                    <input type="email" id="order_email" name="email" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="order_phone">Телефон *</label>
-                    <input type="tel" id="order_phone" name="phone" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="order_address">Адрес доставки *</label>
-                    <textarea id="order_address" name="address" class="form-control" rows="3" required></textarea>
-                </div>
-                
-                <!-- Информация о заказе -->
-                <h3 style="color: #3949ab; margin: 25px 0 15px;" id="delivery">Доставка</h3>
-                
-                <div class="form-group">
-                    <label>Способ доставки *</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="courier" name="delivery" value="courier" checked>
-                            <label for="courier">Курьерская доставка (1-3 дня, 500 ₽)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="pickup" name="delivery" value="pickup">
-                            <label for="pickup">Самовывоз (бесплатно)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="post" name="delivery" value="post">
-                            <label for="post">Почта России (5-14 дней, 300 ₽)</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="delivery_date">Желаемая дата доставки</label>
-                    <input type="date" id="delivery_date" name="delivery_date" class="form-control">
-                </div>
-                
-                <!-- Оплата -->
-                <h3 style="color: #3949ab; margin: 25px 0 15px;" id="payment">Оплата</h3>
-                
-                <div class="form-group">
-                    <label>Способ оплаты *</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="card" name="payment" value="card" checked>
-                            <label for="card">Банковская карта</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="cash" name="payment" value="cash">
-                            <label for="cash">Наличными при получении</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="online" name="payment" value="online">
-                            <label for="online">Онлайн-банкинг</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="card_number">Номер карты (если выбрана оплата картой)</label>
-                    <input type="text" id="card_number" name="card_number" class="form-control" pattern="[0-9]{16}">
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="expiry_date">Срок действия</label>
-                        <input type="text" id="expiry_date" name="expiry_date" class="form-control" placeholder="MM/YY">
-                    </div>
-                    <div class="form-group">
-                        <label for="cvv">CVV/CVC</label>
-                        <input type="password" id="cvv" name="cvv" class="form-control" pattern="[0-9]{3}">
-                    </div>
-                </div>
-                
-                <!-- Дополнительные опции -->
-                <div class="form-group">
-                    <label>Дополнительные услуги</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="assembly" name="services[]" value="assembly">
-                            <label for="assembly">Сборка ПК (5 000 ₽)</label>
-                        </div>
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="testing" name="services[]" value="testing">
-                            <label for="testing">Тестирование системы (1 500 ₽)</label>
-                        </div>
-                        <div class="checkbox-option">
-                            <input type="checkbox" id="warranty_ext" name="services[]" value="warranty_ext">
-                            <label for="warranty_ext">Расширенная гарантия +1 год (3 000 ₽)</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Комментарий -->
-                <div class="form-group">
-                    <label for="comment">Комментарий к заказу</label>
-                    <textarea id="comment" name="comment" class="form-control" rows="4" placeholder="Укажите дополнительные пожелания..."></textarea>
-                </div>
-                
-                <!-- Количество товаров -->
-                <div class="form-group">
-                    <label for="quantity">Количество комплектов (если нужно несколько одинаковых сборок)</label>
-                    <input type="number" id="quantity" name="quantity" class="form-control" min="1" max="10" value="1">
-                </div>
-                
-                <!-- Промокод -->
-                <div class="form-group">
-                    <label for="promo">Промокод (если есть)</label>
-                    <input type="text" id="promo" name="promo_code" class="form-control">
-                </div>
-                
-                <!-- Кнопки -->
-                <div class="form-row" style="margin-top: 30px;">
-                    <button type="submit" class="btn" style="flex: 2;">Оформить заказ</button>
-                    <button type="reset" class="btn" style="flex: 1; background-color: #757575;">Очистить форму</button>
-                </div>
-            </form>
+<div class="form-section" id="order-form">
+    <h2>Форма заказа</h2>
+    <form onsubmit="return sendToBing(this)" method="GET" target="_blank">
+        <!-- Скрытые поля -->
+        <input type="hidden" name="order_id" value="ORD-2023-001">
+        <input type="hidden" name="form_type" value="order_form">
+        <input type="hidden" name="store" value="pc_components_store">
+        
+        <!-- Личные данные -->
+        <h3 style="color: #3949ab; margin: 25px 0 15px;">Личные данные</h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="order_lastname">Фамилия *</label>
+                <input type="text" id="order_lastname" name="lastname" class="form-control" required value="Сидоров">
+            </div>
+            <div class="form-group">
+                <label for="order_firstname">Имя *</label>
+                <input type="text" id="order_firstname" name="firstname" class="form-control" required value="Алексей">
+            </div>
         </div>
-    </div>
-
+        
+        <div class="form-group">
+            <label for="order_email">Электронная почта *</label>
+            <input type="email" id="order_email" name="email" class="form-control" required value="sidorov@example.com">
+        </div>
+        
+        <div class="form-group">
+            <label for="order_phone">Телефон *</label>
+            <input type="tel" id="order_phone" name="phone" class="form-control" required value="+79995554433">
+        </div>
+        
+        <div class="form-group">
+            <label for="order_address">Адрес доставки *</label>
+            <textarea id="order_address" name="address" class="form-control" rows="3" required>г. Москва, ул. Ленина, д. 15, кв. 42</textarea>
+        </div>
+        
+        <!-- Информация о заказе -->
+        <h3 style="color: #3949ab; margin: 25px 0 15px;" id="delivery">Доставка</h3>
+        
+        <div class="form-group">
+            <label>Способ доставки *</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="courier" name="delivery" value="courier" checked>
+                    <label for="courier">Курьерская доставка (1-3 дня, 500 ₽)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="pickup" name="delivery" value="pickup">
+                    <label for="pickup">Самовывоз (бесплатно)</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="post" name="delivery" value="post">
+                    <label for="post">Почта России (5-14 дней, 300 ₽)</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="delivery_date">Желаемая дата доставки</label>
+            <input type="date" id="delivery_date" name="delivery_date" class="form-control" value="2023-12-25">
+        </div>
+        
+        <!-- Оплата -->
+        <h3 style="color: #3949ab; margin: 25px 0 15px;" id="payment">Оплата</h3>
+        
+        <div class="form-group">
+            <label>Способ оплаты *</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="card" name="payment" value="card" checked>
+                    <label for="card">Банковская карта</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="cash" name="payment" value="cash">
+                    <label for="cash">Наличными при получении</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="online" name="payment" value="online">
+                    <label for="online">Онлайн-банкинг</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="card_number">Номер карты (если выбрана оплата картой)</label>
+            <input type="text" id="card_number" name="card_number" class="form-control" pattern="[0-9]{16}" value="4111111111111111">
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="expiry_date">Срок действия</label>
+                <input type="text" id="expiry_date" name="expiry_date" class="form-control" placeholder="MM/YY" value="12/25">
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV/CVC</label>
+                <input type="password" id="cvv" name="cvv" class="form-control" pattern="[0-9]{3}" value="123">
+            </div>
+        </div>
+        
+        <!-- Дополнительные опции -->
+        <div class="form-group">
+            <label>Дополнительные услуги</label>
+            <div class="checkbox-group">
+                <div class="checkbox-option">
+                    <input type="checkbox" id="assembly" name="services[]" value="assembly" checked>
+                    <label for="assembly">Сборка ПК (5 000 ₽)</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="testing" name="services[]" value="testing">
+                    <label for="testing">Тестирование системы (1 500 ₽)</label>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="warranty_ext" name="services[]" value="warranty_ext">
+                    <label for="warranty_ext">Расширенная гарантия +1 год (3 000 ₽)</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Комментарий -->
+        <div class="form-group">
+            <label for="comment">Комментарий к заказу</label>
+            <textarea id="comment" name="comment" class="form-control" rows="4" placeholder="Укажите дополнительные пожелания...">Пожалуйста, аккуратно упакуйте все комплектующие</textarea>
+        </div>
+        
+        <!-- Количество товаров -->
+        <div class="form-group">
+            <label for="quantity">Количество комплектов (если нужно несколько одинаковых сборок)</label>
+            <input type="number" id="quantity" name="quantity" class="form-control" min="1" max="10" value="1">
+        </div>
+        
+        <!-- Промокод -->
+        <div class="form-group">
+            <label for="promo">Промокод (если есть)</label>
+            <input type="text" id="promo" name="promo_code" class="form-control" value="PC2023">
+        </div>
+        
+        <!-- Кнопки -->
+        <div class="form-row" style="margin-top: 30px;">
+            <button type="submit" class="btn" style="flex: 2;">Оформить заказ (откроется Bing с данными)</button>
+            <button type="reset" class="btn" style="flex: 1; background-color: #757575;">Очистить форму</button>
+        </div>
+        
+        <p style="margin-top: 15px; font-size: 0.9em; color: #666;">
+            При нажатии кнопки "Оформить заказ" откроется новая вкладка с Bing, в адресной строке будут видны все введенные данные через символ &
+        </p>
+    </form>
+    
+    <script>
+    function sendToBing(form) {
+        // Собираем все данные формы
+        const formData = new FormData(form);
+        const params = new URLSearchParams();
+        
+        // Собираем чекбоксы с одинаковыми именами (services[])
+        const services = [];
+        const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(cb => {
+            if (cb.checked && cb.name.startsWith('services')) {
+                services.push(cb.value);
+            }
+        });
+        
+        // Добавляем все поля формы в параметры
+        for (const [key, value] of formData.entries()) {
+            if (value && !key.startsWith('services')) {
+                params.append(key, value);
+            }
+        }
+        
+        // Добавляем чекбоксы отдельно
+        if (services.length > 0) {
+            params.append('services', services.join(','));
+        }
+        
+        // Добавляем радиокнопки
+        const radios = form.querySelectorAll('input[type="radio"]:checked');
+        radios.forEach(radio => {
+            params.append(radio.name, radio.value);
+        });
+        
+        // Формируем URL для Bing с параметрами
+        const bingUrl = `https://www.bing.com/search?q=${encodeURIComponent('order_form:')}&${params.toString()}`;
+        
+        // Открываем Bing в новом окне
+        window.open(bingUrl, '_blank');
+        
+        // Предотвращаем стандартную отправку формы
+        return false;
+    }
+    </script>
+</div>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
