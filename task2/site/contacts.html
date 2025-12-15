@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Components - Контакты</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PC</div>
+                <span>PC Components</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="products.html" class="nav-link">Товары</a></li>
+                <li><a href="about.html" class="nav-link">О компании</a></li>
+                <li><a href="contacts.html" class="nav-link active">Контакты</a></li>
+                <li><a href="order.html" class="nav-link">Заказ</a></li>
+                <li><a href="feedback.html" class="nav-link">Отзывы</a></li>
+            </ul>
+            
+            <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                Корзина
+            </button>
+        </div>
+    </header>
+
+    <nav class="page-nav container">
+        <ul class="page-nav-list">
+            <li><a href="#contact-info" class="page-nav-link">Контактная информация</a></li>
+            <li><a href="#contact-form" class="page-nav-link">Форма обратной связи</a></li>
+            <li><a href="#locations" class="page-nav-link">Наши магазины</a></li>
+            <li><a href="#top" class="page-nav-link">К началу</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 id="top">Контакты</h1>
+        
+        <section id="contact-info" class="content-section">
+            <h2>Контактная информация</h2>
+            <div class="contact-grid grid grid-cols-2">
+                <div class="contact-card card">
+                    <div class="card-content">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <h3>Телефоны</h3>
+                        <p>+7 (800) 123-45-67 - бесплатно по России</p>
+                        <p>+7 (495) 123-45-67 - Москва</p>
+                        <p>+7 (812) 123-45-67 - Санкт-Петербург</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card card">
+                    <div class="card-content">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <h3>Электронная почта</h3>
+                        <p>info@pccomponents.ru - общие вопросы</p>
+                        <p>sales@pccomponents.ru - отдел продаж</p>
+                        <p>support@pccomponents.ru - техподдержка</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card card">
+                    <div class="card-content">
+                        <i class="fas fa-clock contact-icon"></i>
+                        <h3>График работы</h3>
+                        <p>Пн-Пт: 9:00 - 21:00</p>
+                        <p>Сб: 10:00 - 20:00</p>
+                        <p>Вс: 10:00 - 18:00</p>
+                    </div>
+                </div>
+                
+                <div class="contact-card card">
+                    <div class="card-content">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <h3>Адрес</h3>
+                        <p>Москва, ул. Технологическая, д. 15</p>
+                        <p>БЦ "Технопарк", 3 этаж</p>
+                        <p>Метро: Технологическая</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact-form" class="form-section">
+            <h2 class="form-title">Форма обратной связи</h2>
+            <form id="contact-form-element" action="https://httpbin.org/post" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contact-name" class="form-label">Ваше имя *</label>
+                        <input type="text" id="contact-name" name="contact_name" class="form-control" required 
+                               value="Сергей Петров">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-phone" class="form-label">Телефон *</label>
+                        <input type="tel" id="contact-phone" name="contact_phone" class="form-control" required 
+                               value="+79991234567">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-email" class="form-label">Электронная почта *</label>
+                    <input type="email" id="contact-email" name="contact_email" class="form-control" required 
+                           value="sergey@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-topic" class="form-label">Тема обращения *</label>
+                    <select id="contact-topic" name="contact_topic" class="form-control" required>
+                        <option value="general">Общий вопрос</option>
+                        <option value="product" selected>Вопрос о товаре</option>
+                        <option value="order">Вопрос по заказу</option>
+                        <option value="delivery">Доставка</option>
+                        <option value="warranty">Гарантия</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-message" class="form-label">Сообщение *</label>
+                    <textarea id="contact-message" name="contact_message" class="form-control" rows="5" required>Здравствуйте! Интересует информация о наличии товаров и условиях доставки.</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Срочность обращения</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="urgency-low" name="urgency" value="low" checked>
+                            <label for="urgency-low">Обычная</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="urgency-high" name="urgency" value="high">
+                            <label for="urgency-high">Срочная</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-time" class="form-label">Удобное время для звонка</label>
+                    <input type="time" id="contact-time" name="contact_time" class="form-control" value="14:00">
+                </div>
+                
+                <button type="submit" class="btn btn-block">Отправить сообщение</button>
+            </form>
+        </section>
+        
+        <section id="locations" class="content-section">
+            <h2>Наши магазины</h2>
+            <div class="locations-grid grid grid-cols-3">
+                <!-- Магазины будут загружены через JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PC Components</h3>
+                    <p>Интернет-магазин комплектующих для ПК. Лучшие компоненты по лучшим ценам.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="products.html">Товары</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="order.html">Оформление заказа</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +7 (800) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@pccomponents.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Технологическая, д. 15</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; <span class="copyright-year">2023</span> PC Components Store. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Специфичный код для страницы контактов
+    document.addEventListener('DOMContentLoaded', function() {
+        const locationsGrid = document.querySelector('.locations-grid');
+        if (locationsGrid) {
+            const locations = [
+                { city: 'Москва', address: 'ул. Технологическая, 15', phone: '+7 (495) 123-45-67' },
+                { city: 'Санкт-Петербург', address: 'Лиговский пр-т, 30', phone: '+7 (812) 123-45-67' },
+                { city: 'Новосибирск', address: 'ул. Ленина, 12', phone: '+7 (383) 123-45-67' },
+                { city: 'Екатеринбург', address: 'ул. Малышева, 51', phone: '+7 (343) 123-45-67' },
+                { city: 'Казань', address: 'ул. Баумана, 44', phone: '+7 (843) 123-45-67' },
+                { city: 'Нижний Новгород', address: 'ул. Большая Покровская, 82', phone: '+7 (831) 123-45-67' }
+            ];
+            
+            locations.forEach(location => {
+                const locationCard = document.createElement('div');
+                locationCard.className = 'location-card card';
+                locationCard.innerHTML = `
+                    <div class="card-content">
+                        <h3 class="card-title">${location.city}</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> ${location.address}</p>
+                        <p><i class="fas fa-phone"></i> ${location.phone}</p>
+                        <button class="btn btn-secondary">Проложить маршрут</button>
+                    </div>
+                `;
+                locationsGrid.appendChild(locationCard);
+            });
+        }
+    });
+    </script>
+</body>
+</html>
