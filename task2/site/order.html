@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Components - Оформление заказа</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PC</div>
+                <span>PC Components</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="products.html" class="nav-link">Товары</a></li>
+                <li><a href="about.html" class="nav-link">О компании</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li><a href="order.html" class="nav-link active">Заказ</a></li>
+                <li><a href="feedback.html" class="nav-link">Отзывы</a></li>
+            </ul>
+            
+            <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                Корзина
+            </button>
+        </div>
+    </header>
+
+    <!-- Внутренняя навигация -->
+    <nav class="page-nav container">
+        <ul class="page-nav-list">
+            <li><a href="#order-form" class="page-nav-link">Форма заказа</a></li>
+            <li><a href="#payment" class="page-nav-link">Оплата</a></li>
+            <li><a href="#delivery" class="page-nav-link">Доставка</a></li>
+            <li><a href="#top" class="page-nav-link">К началу</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 id="top">Оформление заказа</h1>
+        
+        <!-- Сводка заказа -->
+        <div class="order-summary card">
+            <div class="card-content">
+                <h2>Ваш заказ</h2>
+                <div class="summary-items">
+                    <!-- Сводка будет заполнена через JavaScript -->
+                </div>
+                <div class="summary-total">
+                    <strong>Итого: <span class="order-total-price">153 970</span> ₽</strong>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Форма заказа -->
+        <section id="order-form" class="form-section">
+            <h2 class="form-title">Форма заказа</h2>
+            
+            <form action="https://httpbin.org/post" method="POST" id="order-form-element">
+                <!-- Личные данные -->
+                <h3>Личные данные</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customer-name" class="form-label">Фамилия и Имя *</label>
+                        <input type="text" id="customer-name" name="customer-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email" class="form-label">Электронная почта *</label>
+                        <input type="email" id="customer-email" name="customer-email" class="form-control" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customer-phone" class="form-label">Телефон *</label>
+                        <input type="tel" id="customer-phone" name="customer-phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="delivery-address" class="form-label">Адрес доставки *</label>
+                        <input type="text" id="delivery-address" name="delivery-address" class="form-control" required>
+                    </div>
+                </div>
+                
+                <!-- Информация о заказе -->
+                <h3 id="delivery">Доставка</h3>
+                <div class="form-group">
+                    <label class="form-label">Способ доставки *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="delivery-courier" name="delivery-method" value="courier" checked required>
+                            <label for="delivery-courier">Курьерская доставка (1-3 дня, 500 ₽)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="delivery-pickup" name="delivery-method" value="pickup" required>
+                            <label for="delivery-pickup">Самовывоз (бесплатно)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="delivery-post" name="delivery-method" value="post" required>
+                            <label for="delivery-post">Почта России (5-14 дней, 300 ₽)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="delivery-date" class="form-label">Желаемая дата доставки</label>
+                    <input type="date" id="delivery-date" name="delivery-date" class="form-control">
+                </div>
+                
+                <!-- Оплата -->
+                <h3 id="payment">Оплата</h3>
+                <div class="form-group">
+                    <label class="form-label">Способ оплаты *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="payment-card" name="payment-method" value="card" checked required>
+                            <label for="payment-card">Банковская карта</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="payment-cash" name="payment-method" value="cash" required>
+                            <label for="payment-cash">Наличными при получении</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Детали заказа -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-quantity" class="form-label">Количество комплектов *</label>
+                        <input type="number" id="product-quantity" name="product-quantity" 
+                               class="form-control" min="1" max="10" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-comment" class="form-label">Комментарий к заказу</label>
+                        <textarea id="order-comment" name="order-comment" 
+                                  class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                
+                <!-- Скрытые поля -->
+                <input type="hidden" name="order-total" value="153970">
+                <input type="hidden" name="order-date" value="">
+                <input type="hidden" name="user-agent" value="">
+                
+                <!-- Кнопки -->
+                <div class="form-row">
+                    <button type="submit" class="btn btn-block">Оформить заказ</button>
+                </div>
+                
+                <div class="form-row">
+                    <button type="reset" class="btn btn-secondary btn-block">Очистить форму</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PC Components</h3>
+                    <p>Интернет-магазин комплектующих для ПК. Лучшие компоненты по лучшим ценам.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="products.html">Товары</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="order.html">Оформление заказа</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +7 (800) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@pccomponents.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Технологическая, д. 15</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; <span class="copyright-year">2023</span> PC Components Store. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Специфичная инициализация для страницы заказа
+    document.addEventListener('DOMContentLoaded', function() {
+        // Установить дату по умолчанию
+        const today = new Date();
+        const nextWeek = new Date(today);
+        nextWeek.setDate(today.getDate() + 7);
+        
+        const deliveryDate = document.getElementById('delivery-date');
+        if (deliveryDate) {
+            deliveryDate.min = today.toISOString().split('T')[0];
+            deliveryDate.value = nextWeek.toISOString().split('T')[0];
+        }
+        
+        // Заполнить скрытые поля
+        const orderDate = document.querySelector('input[name="order-date"]');
+        const userAgent = document.querySelector('input[name="user-agent"]');
+        
+        if (orderDate) orderDate.value = new Date().toISOString();
+        if (userAgent) userAgent.value = navigator.userAgent;
+    });
+    </script>
+</body>
+</html>
