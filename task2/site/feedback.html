@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Components - Отзывы</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PC</div>
+                <span>PC Components</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="products.html" class="nav-link">Товары</a></li>
+                <li><a href="about.html" class="nav-link">О компании</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li><a href="order.html" class="nav-link">Заказ</a></li>
+                <li><a href="feedback.html" class="nav-link active">Отзывы</a></li>
+            </ul>
+            
+            <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                Корзина
+            </button>
+        </div>
+    </header>
+
+    <nav class="page-nav container">
+        <ul class="page-nav-list">
+            <li><a href="#reviews" class="page-nav-link">Отзывы клиентов</a></li>
+            <li><a href="#add-review" class="page-nav-link">Оставить отзыв</a></li>
+            <li><a href="#top" class="page-nav-link">К началу</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 id="top">Отзывы клиентов</h1>
+        
+        <section id="reviews" class="reviews-section">
+            <h2>Что говорят наши клиенты</h2>
+            <div class="reviews-grid grid grid-cols-3">
+                <!-- Отзывы будут загружены через JavaScript -->
+            </div>
+        </section>
+        
+        <section id="add-review" class="form-section">
+            <h2 class="form-title">Оставить отзыв</h2>
+            <form id="review-form" action="https://httpbin.org/post" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reviewer-name" class="form-label">Ваше имя *</label>
+                        <input type="text" id="reviewer-name" name="reviewer_name" class="form-control" required 
+                               value="Александр Иванов">
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewer-email" class="form-label">Электронная почта *</label>
+                        <input type="email" id="reviewer-email" name="reviewer_email" class="form-control" required 
+                               value="alex@example.com">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="product-name" class="form-label">Название товара</label>
+                        <input type="text" id="product-name" name="product_name" class="form-control" 
+                               value="Intel Core i7-13700K">
+                    </div>
+                    <div class="form-group">
+                        <label for="review-rating" class="form-label">Оценка (1-5)</label>
+                        <input type="number" id="review-rating" name="review_rating" class="form-control" 
+                               min="1" max="5" value="5">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-title" class="form-label">Заголовок отзыва *</label>
+                    <input type="text" id="review-title" name="review_title" class="form-control" required 
+                           value="Отличный процессор!">
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-text" class="form-label">Текст отзыва *</label>
+                    <textarea id="review-text" name="review_text" class="form-control" rows="5" required>Очень доволен покупкой! Процессор работает отлично, сборка ПК прошла без проблем. Спасибо магазину за качественный товар и быструю доставку.</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Рекомендуете ли вы наш магазин?</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="recommend-yes" name="recommend" value="yes" checked>
+                            <label for="recommend-yes">Да, рекомендую</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="recommend-no" name="recommend" value="no">
+                            <label for="recommend-no">Нет, не рекомендую</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-date" class="form-label">Дата покупки</label>
+                    <input type="date" id="review-date" name="review_date" class="form-control" 
+                           value="2023-11-15">
+                </div>
+                
+                <button type="submit" class="btn btn-block">Опубликовать отзыв</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PC Components</h3>
+                    <p>Интернет-магазин комплектующих для ПК. Лучшие компоненты по лучшим ценам.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="products.html">Товары</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="order.html">Оформление заказа</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +7 (800) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@pccomponents.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Технологическая, д. 15</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; <span class="copyright-year">2023</span> PC Components Store. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Специфичный код для страницы отзывов
+    document.addEventListener('DOMContentLoaded', function() {
+        const reviewsGrid = document.querySelector('.reviews-grid');
+        if (reviewsGrid) {
+            const reviews = [
+                { name: 'Александр И.', rating: 5, date: '15.11.2023', text: 'Отличный магазин! Заказывал сборку ПК, все пришло быстро и в идеальном состоянии.' },
+                { name: 'Мария С.', rating: 4, date: '10.11.2023', text: 'Хорошие цены, но доставка немного задержалась. В целом довольна покупкой.' },
+                { name: 'Дмитрий П.', rating: 5, date: '05.11.2023', text: 'Лучший магазин комплектующих! Покупаю здесь уже 3 года, всегда отличный сервис.' },
+                { name: 'Ольга К.', rating: 5, date: '01.11.2023', text: 'Заказывала 15 компьютеров для офиса. Сделали хорошую скидку, все работает отлично!' },
+                { name: 'Сергей Н.', rating: 5, date: '28.10.2023', text: 'Процессор AMD Ryzen 7 - отличная цена, быстрая доставка, рекомендую!' },
+                { name: 'Анна В.', rating: 4, date: '25.10.2023', text: 'Хороший товар, немного дороговато, но качество на высоте.' },
+                { name: 'Игорь М.', rating: 5, date: '20.10.2023', text: 'SSD Samsung 2TB - скорость работы поражает, всем советую!' },
+                { name: 'Елена С.', rating: 5, date: '15.10.2023', text: 'Блок питания Corsair - тихий и надежный, спасибо за консультацию!' },
+                { name: 'Михаил Л.', rating: 5, date: '10.10.2023', text: 'Видеокарта RTX 4060 Ti - отличное решение для игр, работает безупречно!' },
+                { name: 'Наталья Р.', rating: 4, date: '05.10.2023', text: 'Материнская плата ASUS - качественная сборка, все работает стабильно.' },
+                { name: 'Павел З.', rating: 5, date: '01.10.2023', text: 'ОЗУ Kingston 32GB - отличная производительность, никаких проблем.' },
+                { name: 'Татьяна Б.', rating: 5, date: '25.09.2023', text: 'Кулер Noctua - очень тихий, отлично справляется с охлаждением.' }
+            ];
+            
+            reviews.forEach(review => {
+                const reviewCard = document.createElement('div');
+                reviewCard.className = 'review-card card';
+                reviewCard.innerHTML = `
+                    <div class="card-content">
+                        <div class="review-header">
+                            <h3 class="review-author">${review.name}</h3>
+                            <div class="review-rating">
+                                ${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}
+                            </div>
+                        </div>
+                        <p class="review-date">${review.date}</p>
+                        <p class="review-text">${review.text}</p>
+                    </div>
+                `;
+                reviewsGrid.appendChild(reviewCard);
+            });
+        }
+    });
+    </script>
+</body>
+</html>
