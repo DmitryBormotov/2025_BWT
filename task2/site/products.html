@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Components - Каталог товаров</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PC</div>
+                <span>PC Components</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="products.html" class="nav-link active">Товары</a></li>
+                <li><a href="about.html" class="nav-link">О компании</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li><a href="order.html" class="nav-link">Заказ</a></li>
+                <li><a href="feedback.html" class="nav-link">Отзывы</a></li>
+            </ul>
+            
+            <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                Корзина
+            </button>
+        </div>
+    </header>
+
+    <!-- Внутренняя навигация -->
+    <nav class="page-nav container">
+        <ul class="page-nav-list">
+            <li><a href="#all-products" class="page-nav-link">Все товары</a></li>
+            <li><a href="#processors" class="page-nav-link">Процессоры</a></li>
+            <li><a href="#video-cards" class="page-nav-link">Видеокарты</a></li>
+            <li><a href="#motherboards" class="page-nav-link">Материнские платы</a></li>
+            <li><a href="#top" class="page-nav-link">К началу</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 id="top">Каталог товаров</h1>
+        
+        <!-- Фильтры и сортировка -->
+        <div class="filters-section">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="category-filter" class="form-label">Категория:</label>
+                    <select id="category-filter" class="form-control">
+                        <option value="all">Все категории</option>
+                        <option value="Процессоры">Процессоры</option>
+                        <option value="Видеокарты">Видеокарты</option>
+                        <option value="Материнские платы">Материнские платы</option>
+                        <option value="Оперативная память">Оперативная память</option>
+                        <option value="SSD">SSD</option>
+                        <option value="Блоки питания">Блоки питания</option>
+                        <option value="Кулеры">Кулеры</option>
+                        <option value="Корпуса">Корпуса</option>
+                        <option value="Мониторы">Мониторы</option>
+                        <option value="Периферия">Периферия</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sort-by" class="form-label">Сортировка:</label>
+                    <select id="sort-by" class="form-control">
+                        <option value="default">По умолчанию</option>
+                        <option value="price-low">Цена: по возрастанию</option>
+                        <option value="price-high">Цена: по убыванию</option>
+                        <option value="name">По названию</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Динамическая сетка товаров -->
+        <section id="all-products" class="product-grid grid grid-cols-3">
+            <!-- Товары будут загружены через JavaScript -->
+            <div class="loading">
+                <i class="fas fa-spinner fa-spin"></i> Загрузка товаров...
+            </div>
+        </section>
+        
+        <!-- Галерея изображений -->
+        <section class="gallery-section">
+            <h2>Галерея товаров</h2>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=150&h=150&fit=crop" 
+                     alt="Процессор Intel" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d3?w=150&h=150&fit=crop" 
+                     alt="Процессор AMD" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=150&h=150&fit=crop" 
+                     alt="Видеокарта" class="thumbnail">
+                <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?w=150&h=150&fit=crop" 
+                     alt="Материнская плата" class="thumbnail">
+            </div>
+        </section>
+        
+        <!-- Таблица с характеристиками -->
+        <section class="table-section">
+            <h2>Сравнение товаров</h2>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Характеристика</th>
+                            <th>Intel Core i7-13700K</th>
+                            <th>AMD Ryzen 9 7950X</th>
+                            <th>NVIDIA RTX 4090</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Производитель</td>
+                            <td>Intel</td>
+                            <td>AMD</td>
+                            <td>NVIDIA</td>
+                        </tr>
+                        <tr>
+                            <td>Ядра/Потоки</td>
+                            <td>16/24</td>
+                            <td>16/32</td>
+                            <td>16384 CUDA ядер</td>
+                        </tr>
+                        <tr>
+                            <td>Тактовая частота</td>
+                            <td>До 5.4 ГГц</td>
+                            <td>До 5.7 ГГц</td>
+                            <td>2520 МГц</td>
+                        </tr>
+                        <tr>
+                            <td>Память</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>24 ГБ GDDR6X</td>
+                        </tr>
+                        <tr>
+                            <td>Цена</td>
+                            <td>38 990 ₽</td>
+                            <td>52 990 ₽</td>
+                            <td>199 990 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PC Components</h3>
+                    <p>Интернет-магазин комплектующих для ПК. Лучшие компоненты по лучшим ценам.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="products.html">Товары</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="order.html">Оформление заказа</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +7 (800) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@pccomponents.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Технологическая, д. 15</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; <span class="copyright-year">2023</span> PC Components Store. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Специфичные для страницы функции
+    document.addEventListener('DOMContentLoaded', function() {
+        // Инициализация фильтров
+        const categoryFilter = document.getElementById('category-filter');
+        const sortFilter = document.getElementById('sort-by');
+        
+        if (categoryFilter) {
+            categoryFilter.addEventListener('change', function() {
+                filterProducts(this.value);
+            });
+        }
+        
+        if (sortFilter) {
+            sortFilter.addEventListener('change', function() {
+                sortProducts(this.value);
+            });
+        }
+    });
+    </script>
+</body>
+</html>
