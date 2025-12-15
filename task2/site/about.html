@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Components - О компании</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PC</div>
+                <span>PC Components</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="products.html" class="nav-link">Товары</a></li>
+                <li><a href="about.html" class="nav-link active">О компании</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li><a href="order.html" class="nav-link">Заказ</a></li>
+                <li><a href="feedback.html" class="nav-link">Отзывы</a></li>
+            </ul>
+            
+            <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                Корзина
+            </button>
+        </div>
+    </header>
+
+    <nav class="page-nav container">
+        <ul class="page-nav-list">
+            <li><a href="#history" class="page-nav-link">История</a></li>
+            <li><a href="#team" class="page-nav-link">Команда</a></li>
+            <li><a href="#values" class="page-nav-link">Ценности</a></li>
+            <li><a href="#top" class="page-nav-link">К началу</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <h1 id="top">О нашей компании</h1>
+        
+        <section id="history" class="content-section fade-in">
+            <h2>Наша история</h2>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p>PC Components была основана в 2010 году группой энтузиастов компьютерных технологий. Начиная с небольшого магазина в центре Москвы, мы выросли в одного из крупнейших онлайн-ритейлеров компьютерных комплектующих в России.</p>
+                    <p>За 13 лет работы мы обслужили более 100 000 клиентов, реализовали более 500 000 единиц техники и стали надежным партнером для десятков российских компаний.</p>
+                </div>
+                <div class="content-image">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" 
+                         alt="Наш магазин" class="responsive-img">
+                </div>
+            </div>
+        </section>
+        
+        <section id="team" class="content-section fade-in">
+            <h2>Наша команда</h2>
+            <div class="team-grid grid grid-cols-4">
+                <!-- Команда будет загружена через JavaScript -->
+            </div>
+        </section>
+        
+        <section id="values" class="content-section fade-in">
+            <h2>Наши ценности</h2>
+            <div class="values-list">
+                <div class="value-item">
+                    <i class="fas fa-award value-icon"></i>
+                    <h3>Качество</h3>
+                    <p>Мы предлагаем только сертифицированные товары от проверенных производителей с гарантией.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-users value-icon"></i>
+                    <h3>Экспертиза</h3>
+                    <p>Наши специалисты регулярно проходят обучение и помогут подобрать оптимальную конфигурацию.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-heart value-icon"></i>
+                    <h3>Забота о клиентах</h3>
+                    <p>Круглосуточная поддержка, удобные условия оплаты и доставки, индивидуальный подход.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PC Components</h3>
+                    <p>Интернет-магазин комплектующих для ПК. Лучшие компоненты по лучшим ценам.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="products.html">Товары</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="order.html">Оформление заказа</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +7 (800) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@pccomponents.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Технологическая, д. 15</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; <span class="copyright-year">2023</span> PC Components Store. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    // Специфичный код для страницы "О компании"
+    document.addEventListener('DOMContentLoaded', function() {
+        const teamGrid = document.querySelector('.team-grid');
+        if (teamGrid) {
+            const teamMembers = [
+                { name: 'Иван Петров', position: 'Директор', experience: '15 лет' },
+                { name: 'Алексей Смирнов', position: 'Технический специалист', experience: '10 лет' },
+                { name: 'Мария Иванова', position: 'Менеджер по продажам', experience: '8 лет' },
+                { name: 'Дмитрий Козлов', position: 'Сервисный инженер', experience: '12 лет' }
+            ];
+            
+            teamMembers.forEach(member => {
+                const memberCard = document.createElement('div');
+                memberCard.className = 'team-card card';
+                memberCard.innerHTML = `
+                    <div class="card-content">
+                        <h3 class="card-title">${member.name}</h3>
+                        <p class="card-subtitle">${member.position}</p>
+                        <p class="card-text">Опыт работы: ${member.experience}</p>
+                    </div>
+                `;
+                teamGrid.appendChild(memberCard);
+            });
+        }
+    });
+    </script>
+</body>
+</html>
