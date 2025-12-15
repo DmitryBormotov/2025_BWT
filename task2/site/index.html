@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Components - Главная</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <header class="header">
+        <div class="nav-container container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">PC</div>
+                <span>PC Components</span>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Главная</a></li>
+                <li><a href="products.html" class="nav-link">Товары</a></li>
+                <li><a href="about.html" class="nav-link">О компании</a></li>
+                <li><a href="contacts.html" class="nav-link">Контакты</a></li>
+                <li><a href="order.html" class="nav-link">Заказ</a></li>
+                <li><a href="feedback.html" class="nav-link">Отзывы</a></li>
+            </ul>
+            
+            <button class="cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                Корзина
+            </button>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Лучшие комплектующие для ПК</h1>
+                <p class="hero-text">Соберите свой идеальный компьютер с компонентами от ведущих производителей. Гарантия качества, быстрая доставка и лучшие цены!</p>
+                <a href="products.html" class="btn btn-large">Смотреть товары</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features-section container">
+        <h2>Почему выбирают нас</h2>
+        <div class="grid grid-cols-3">
+            <div class="card">
+                <div class="card-content">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="card-title">Гарантия 2 года</h3>
+                    <p>Все товары проходят тщательную проверку. Гарантия от производителя + расширенная гарантия магазина.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="card-title">Быстрая доставка</h3>
+                    <p>Доставка по России от 1 дня. Самовывоз из 100+ пунктов выдачи. Бесплатная доставка от 20 000 ₽.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-content">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="card-title">Лучшие цены</h3>
+                    <p>Регулярные акции и скидки. Программа лояльности. Гарантия самой низкой цены на рынке.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные товары -->
+    <section class="products-section container">
+        <h2>Популярные товары</h2>
+        <div class="grid grid-cols-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=300&h=200&fit=crop" 
+                     alt="Процессор Intel" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">Intel Core i7-13700K</h3>
+                    <p class="card-price">38 990 ₽</p>
+                    <button class="btn btn-block">В корзину</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d3?w=300&h=200&fit=crop" 
+                     alt="Процессор AMD" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">AMD Ryzen 9 7950X</h3>
+                    <p class="card-price">52 990 ₽</p>
+                    <button class="btn btn-block">В корзину</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=300&h=200&fit=crop" 
+                     alt="Видеокарта" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">NVIDIA RTX 4070</h3>
+                    <p class="card-price">79 990 ₽</p>
+                    <button class="btn btn-block">В корзину</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?w=300&h=200&fit=crop" 
+                     alt="Материнская плата" class="card-img">
+                <div class="card-content">
+                    <h3 class="card-title">ASUS ROG Strix Z790</h3>
+                    <p class="card-price">34 990 ₽</p>
+                    <button class="btn btn-block">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма подписки -->
+    <section class="form-section container">
+        <h2 class="form-title">Подписка на новости</h2>
+        <form id="subscribe-form" action="https://httpbin.org/post" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="subscribe-name" class="form-label">Имя *</label>
+                    <input type="text" id="subscribe-name" name="name" class="form-control" required 
+                           value="Иван Иванов">
+                </div>
+                <div class="form-group">
+                    <label for="subscribe-email" class="form-label">Email *</label>
+                    <input type="email" id="subscribe-email" name="email" class="form-control" required 
+                           value="ivan@example.com">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="subscribe-phone" class="form-label">Телефон</label>
+                <input type="tel" id="subscribe-phone" name="phone" class="form-control" 
+                       value="+79991234567">
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Получать уведомления о:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="notify-sales" name="notifications[]" value="sales" checked>
+                        <label for="notify-sales">Акции и скидки</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="notify-new" name="notifications[]" value="new" checked>
+                        <label for="notify-new">Новинки</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="notify-tips" name="notifications[]" value="tips">
+                        <label for="notify-tips">Советы по сборке</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="frequency" class="form-label">Частота рассылки</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="freq-weekly" name="frequency" value="weekly" checked>
+                        <label for="freq-weekly">Еженедельно</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="freq-monthly" name="frequency" value="monthly">
+                        <label for="freq-monthly">Ежемесячно</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="news-count" class="form-label">Количество новостей в неделю (1-10)</label>
+                <input type="number" id="news-count" name="news_count" class="form-control" 
+                       min="1" max="10" value="3">
+            </div>
+            
+            <button type="submit" class="btn btn-block">Подписаться</button>
+        </form>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PC Components</h3>
+                    <p>Интернет-магазин комплектующих для ПК. Лучшие компоненты по лучшим ценам.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="products.html">Товары</a></li>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="order.html">Оформление заказа</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +7 (800) 123-45-67</li>
+                        <li><i class="fas fa-envelope"></i> info@pccomponents.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Технологическая, д. 15</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Социальные сети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; <span class="copyright-year">2023</span> PC Components Store. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
