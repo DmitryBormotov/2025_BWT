@@ -628,6 +628,20 @@ function sortProducts(criteria) {
 window.addEventListener('load', function() {
     // Обновить счетчик корзины
     updateCartCount();
+
+        // Обновить скрытые поля timestamp в формах
+    document.querySelectorAll('input[name="timestamp"]').forEach(field => {
+        field.value = new Date().toISOString();
+    });
+    
+    document.querySelectorAll('input[name="order_date"]').forEach(field => {
+        field.value = new Date().toISOString();
+    });
+    
+    document.querySelectorAll('input[name="user_agent"]').forEach(field => {
+        field.value = navigator.userAgent;
+    });
+
     
     // Добавить CSS анимации
     const style = document.createElement('style');
