@@ -58,23 +58,106 @@ function initForms() {
     const forms = document.querySelectorAll('form');
     
     forms.forEach(form => {
-        // Валидация форм
-        form.addEventListener('submit', function(e) {
-            if (!validateForm(this)) {
+        // Для форм с классом bing-form - отправка в Bing
+        if (form.classList.contains('bing-form')) {
+            form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                return false;
-            }
-            
-            // Показать сообщение об успехе
-            showFormMessage(this, 'Форма успешно отправлена!', 'success');
-            return true;
-        });
+                
+                if (validateForm(this)) {
+                    // Собираем все данные формы
+                    const formData = new FormData(this);
+                    const params = new URLSearchParams();
+                    
+                    // Добавляем все поля формы в параметры
+                    for (const [key, value] of formData.entries()) {
+                        // Пропускаем пустые чекбоксы
+                        if (value) {
+                            // Для чекбоксов с массивом
+                            if (key.includes('[]')) {
+                                const baseName = key.replace('[]', '');
+                                params.append(baseName, value);
+                            } else {
+                                params.append(key, value);
+                            }
+                        }
+                    }
+                    
+                    // Добавляем радиокнопки
+                    const radios = this.querySelectorAll('input[type="radio"]:checked');
+                    radios.forEach(radio => {
+                        params.append(radio.name, radio.value);
+                    });
+                    
+                    // Формируем URL для Bing
+                    const bingUrl = `https://www.bing.com/search?q=${encodeURIComponent('PC Components Form')}&${params.toString()}`;
+                    
+                    // Открываем Bing в новом окне
+                    window.open(bingUrl, '_blank');
+                    
+                    // Показать сообщение об успехе
+                    showFormMessage(this, 'Форма успешно отправлена! Открывается Bing...', 'success');
+                    
+                    // Очистить форму после отправки
+                    setTimeout(() => {
+                        form.reset();
+                        // Восстановить значения по умолчанию для Bing-форм
+                        restoreDefaultValues(form);
+                    }, 2000);
+                }
+            });
+        } else {
+            // Остальные формы отправляются на сервер
+            form.addEventListener('submit', function(e) {
+                if (!validateForm(this)) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Показать сообщение об успехе
+                showFormMessage(this, 'Форма успешно отправлена!', 'success');
+                return true;
+            });
+        }
         
         // Динамическое обновление полей
         form.addEventListener('change', function(e) {
             updateFormState(this);
         });
     });
+}
+
+// Восстановить значения по умолчанию для Bing-форм
+function restoreDefaultValues(form) {
+    // Установить значения по умолчанию для каждой формы
+    if (form.id === 'subscribe-form') {
+        setTimeout(() => {
+            form.querySelector('[name="name"]').value = 'Иван Иванов';
+            form.querySelector('[name="email"]').value = 'ivan@example.com';
+            form.querySelector('[name="phone"]').value = '+79991234567';
+        }, 100);
+    } else if (form.id === 'contact-form-element') {
+        setTimeout(() => {
+            form.querySelector('[name="contact_name"]').value = 'Сергей Петров';
+            form.querySelector('[name="contact_phone"]').value = '+79991234567';
+            form.querySelector('[name="contact_email"]').value = 'sergey@example.com';
+            form.querySelector('[name="contact_message"]').value = 'Здравствуйте! Интересует информация о наличии товаров и условиях доставки.';
+        }, 100);
+    } else if (form.id === 'order-form-element') {
+        setTimeout(() => {
+            form.querySelector('[name="customer-name"]').value = 'Иван Иванов';
+            form.querySelector('[name="customer-email"]').value = 'ivan@example.com';
+            form.querySelector('[name="customer-phone"]').value = '+79991234567';
+            form.querySelector('[name="delivery-address"]').value = 'г. Москва, ул. Примерная, д. 10';
+        }, 100);
+    } else if (form.id === 'review-form') {
+        setTimeout(() => {
+            form.querySelector('[name="reviewer_name"]').value = 'Александр Иванов';
+            form.querySelector('[name="reviewer_email"]').value = 'alex@example.com';
+            form.querySelector('[name="product_name"]').value = 'Intel Core i7-13700K';
+            form.querySelector('[name="review_title"]').value = 'Отличный процессор!';
+            form.querySelector('[name="review_text"]').value = 'Очень доволен покупкой! Процессор работает отлично, сборка ПК прошла без проблем.';
+        }, 100);
+    }
 }
 
 // Валидация формы
@@ -104,7 +187,6 @@ function validateForm(form) {
     
     return isValid;
 }
-
 function markFieldAsInvalid(field) {
     field.style.borderColor = '#e74c3c';
     field.parentElement.classList.add('has-error');
