@@ -666,3 +666,114 @@ body {
 .header .cart-btn {
     position: relative;
 }
+
+/* Специальные стили для центрированной формы */
+.centered-form {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.centered-form .form-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.centered-form .form-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.centered-form .form-group {
+    margin-bottom: 25px;
+}
+
+.centered-form .form-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.centered-form .form-control {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.centered-form .form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(57, 73, 171, 0.2);
+}
+
+.centered-form .checkbox-group,
+.centered-form .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.centered-form .checkbox-option,
+.centered-form .radio-option {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.centered-form .checkbox-option:hover,
+.centered-form .radio-option:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.centered-form .checkbox-option input[type="checkbox"],
+.centered-form .radio-option input[type="radio"] {
+    margin-right: 8px;
+}
+
+.centered-form .btn-block {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto 20px;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #f57c00 100%);
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.centered-form .btn-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 152, 0, 0.3);
+}
+
+.centered-form .form-note {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: 15px;
+    line-height: 1.5;
+}
