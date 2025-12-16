@@ -86,7 +86,7 @@
         <h2>Популярные товары</h2>
         <div class="grid grid-cols-4">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=300&h=200&fit=crop" 
+                <img src="./100068131699b1.jpg"
                      alt="Процессор Intel" class="card-img">
                 <div class="card-content">
                     <h3 class="card-title">Intel Core i7-13700K</h3>
@@ -96,7 +96,7 @@
             </div>
             
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d3?w=300&h=200&fit=crop" 
+                <img src="./orig (1).jpg" 
                      alt="Процессор AMD" class="card-img">
                 <div class="card-content">
                     <h3 class="card-title">AMD Ryzen 9 7950X</h3>
@@ -129,83 +129,79 @@
 
     <!-- Форма подписки -->
     <section class="form-section container">
-    <h2 class="form-title">Подписка на новости</h2>
-    <p style="text-align: center; margin-bottom: 20px; color: #666;">
-        При отправке формы откроется Bing с вашими данными в адресной строке
-    </p>
-    <form id="subscribe-form" class="bing-form">
-        <div class="form-row">
+    <div class="centered-form">
+        <h2 class="form-title">Подписка на новости</h2>
+        <form id="subscribe-form" class="bing-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="subscribe-name" class="form-label">Имя *</label>
+                    <input type="text" id="subscribe-name" name="name" class="form-control" required 
+                           value="Иван Иванов">
+                </div>
+                <div class="form-group">
+                    <label for="subscribe-email" class="form-label">Email *</label>
+                    <input type="email" id="subscribe-email" name="email" class="form-control" required 
+                           value="ivan@example.com">
+                </div>
+            </div>
+            
             <div class="form-group">
-                <label for="subscribe-name" class="form-label">Имя *</label>
-                <input type="text" id="subscribe-name" name="name" class="form-control" required 
-                       value="Иван Иванов">
+                <label for="subscribe-phone" class="form-label">Телефон</label>
+                <input type="tel" id="subscribe-phone" name="phone" class="form-control" 
+                       value="+79991234567">
             </div>
+            
             <div class="form-group">
-                <label for="subscribe-email" class="form-label">Email *</label>
-                <input type="email" id="subscribe-email" name="email" class="form-control" required 
-                       value="ivan@example.com">
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <label for="subscribe-phone" class="form-label">Телефон</label>
-            <input type="tel" id="subscribe-phone" name="phone" class="form-control" 
-                   value="+79991234567">
-        </div>
-        
-        <div class="form-group">
-            <label class="form-label">Получать уведомления о:</label>
-            <div class="checkbox-group">
-                <div class="checkbox-option">
-                    <input type="checkbox" id="notify-sales" name="notifications[]" value="sales" checked>
-                    <label for="notify-sales">Акции и скидки</label>
-                </div>
-                <div class="checkbox-option">
-                    <input type="checkbox" id="notify-new" name="notifications[]" value="new" checked>
-                    <label for="notify-new">Новинки</label>
-                </div>
-                <div class="checkbox-option">
-                    <input type="checkbox" id="notify-tips" name="notifications[]" value="tips">
-                    <label for="notify-tips">Советы по сборке</label>
+                <label class="form-label">Получать уведомления о:</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="notify-sales" name="notifications[]" value="sales" checked>
+                        <label for="notify-sales">Акции и скидки</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="notify-new" name="notifications[]" value="new" checked>
+                        <label for="notify-new">Новинки</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="notify-tips" name="notifications[]" value="tips">
+                        <label for="notify-tips">Советы по сборке</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="form-group">
-            <label for="frequency" class="form-label">Частота рассылки</label>
-            <div class="radio-group">
-                <div class="radio-option">
-                    <input type="radio" id="freq-weekly" name="frequency" value="weekly" checked>
-                    <label for="freq-weekly">Еженедельно</label>
-                </div>
-                <div class="radio-option">
-                    <input type="radio" id="freq-monthly" name="frequency" value="monthly">
-                    <label for="freq-monthly">Ежемесячно</label>
+            
+            <div class="form-group">
+                <label for="frequency" class="form-label">Частота рассылки</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="freq-weekly" name="frequency" value="weekly" checked>
+                        <label for="freq-weekly">Еженедельно</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="freq-monthly" name="frequency" value="monthly">
+                        <label for="freq-monthly">Ежемесячно</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="form-group">
-            <label for="news-count" class="form-label">Количество новостей в неделю (1-10)</label>
-            <input type="number" id="news-count" name="news_count" class="form-control" 
-                   min="1" max="10" value="3">
-        </div>
-        
-        <!-- Скрытые поля -->
-        <input type="hidden" name="form_type" value="news_subscription">
-        <input type="hidden" name="source" value="pc_components">
-        <input type="hidden" name="timestamp" value="">
-        
-        <button type="submit" class="btn btn-block">
-            <i class="fas fa-search"></i> Подписаться (откроется Bing)
-        </button>
-        
-        <p style="margin-top: 15px; font-size: 0.9em; color: #666; text-align: center;">
-            Все введенные данные будут видны в адресной строке Bing через символ &
-        </p>
-    </form>
+            
+            <div class="form-group">
+                <label for="news-count" class="form-label">Количество новостей в неделю (1-10)</label>
+                <input type="number" id="news-count" name="news_count" class="form-control" 
+                       min="1" max="10" value="3">
+            </div>
+            
+            <!-- Скрытые поля -->
+            <input type="hidden" name="form_type" value="news_subscription">
+            <input type="hidden" name="source" value="pc_components">
+            <input type="hidden" name="timestamp" value="">
+            
+            <button type="submit" class="btn btn-block">
+                <i class="fas fa-search"></i> Подписаться
+            </button>
+            
+        </form>
+    </div>
 </section>
-
+    
     <!-- Футер -->
     <footer class="footer">
         <div class="container">
