@@ -62,103 +62,117 @@
         
         <!-- Форма заказа -->
         <section id="order-form" class="form-section">
-            <h2 class="form-title">Форма заказа</h2>
-            
-            <form action="https://httpbin.org/post" method="POST" id="order-form-element">
-                <!-- Личные данные -->
-                <h3>Личные данные</h3>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="customer-name" class="form-label">Фамилия и Имя *</label>
-                        <input type="text" id="customer-name" name="customer-name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="customer-email" class="form-label">Электронная почта *</label>
-                        <input type="email" id="customer-email" name="customer-email" class="form-control" required>
-                    </div>
+    <h2 class="form-title">Форма заказа</h2>
+    <p style="text-align: center; margin-bottom: 20px; color: #666;">
+        При отправке формы откроется Bing с вашими данными в адресной строке
+    </p>
+    <form id="order-form-element" class="bing-form">
+        <!-- Личные данные -->
+        <h3>Личные данные</h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="customer-name" class="form-label">Фамилия и Имя *</label>
+                <input type="text" id="customer-name" name="customer_name" class="form-control" required 
+                       value="Иван Иванов">
+            </div>
+            <div class="form-group">
+                <label for="customer-email" class="form-label">Электронная почта *</label>
+                <input type="email" id="customer-email" name="customer_email" class="form-control" required 
+                       value="ivan@example.com">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="customer-phone" class="form-label">Телефон *</label>
+                <input type="tel" id="customer-phone" name="customer_phone" class="form-control" required 
+                       value="+79991234567">
+            </div>
+            <div class="form-group">
+                <label for="delivery-address" class="form-label">Адрес доставки *</label>
+                <input type="text" id="delivery-address" name="delivery_address" class="form-control" required 
+                       value="г. Москва, ул. Примерная, д. 10">
+            </div>
+        </div>
+        
+        <!-- Информация о заказе -->
+        <h3 id="delivery">Доставка</h3>
+        <div class="form-group">
+            <label class="form-label">Способ доставки *</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="delivery-courier" name="delivery_method" value="courier" checked required>
+                    <label for="delivery-courier">Курьерская доставка (1-3 дня, 500 ₽)</label>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="customer-phone" class="form-label">Телефон *</label>
-                        <input type="tel" id="customer-phone" name="customer-phone" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="delivery-address" class="form-label">Адрес доставки *</label>
-                        <input type="text" id="delivery-address" name="delivery-address" class="form-control" required>
-                    </div>
+                <div class="radio-option">
+                    <input type="radio" id="delivery-pickup" name="delivery_method" value="pickup" required>
+                    <label for="delivery-pickup">Самовывоз (бесплатно)</label>
                 </div>
-                
-                <!-- Информация о заказе -->
-                <h3 id="delivery">Доставка</h3>
-                <div class="form-group">
-                    <label class="form-label">Способ доставки *</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="delivery-courier" name="delivery-method" value="courier" checked required>
-                            <label for="delivery-courier">Курьерская доставка (1-3 дня, 500 ₽)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="delivery-pickup" name="delivery-method" value="pickup" required>
-                            <label for="delivery-pickup">Самовывоз (бесплатно)</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="delivery-post" name="delivery-method" value="post" required>
-                            <label for="delivery-post">Почта России (5-14 дней, 300 ₽)</label>
-                        </div>
-                    </div>
+                <div class="radio-option">
+                    <input type="radio" id="delivery-post" name="delivery_method" value="post" required>
+                    <label for="delivery-post">Почта России (5-14 дней, 300 ₽)</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="delivery-date" class="form-label">Желаемая дата доставки</label>
-                    <input type="date" id="delivery-date" name="delivery-date" class="form-control">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="delivery-date" class="form-label">Желаемая дата доставки</label>
+            <input type="date" id="delivery-date" name="delivery_date" class="form-control" 
+                   value="2023-12-25">
+        </div>
+        
+        <!-- Оплата -->
+        <h3 id="payment">Оплата</h3>
+        <div class="form-group">
+            <label class="form-label">Способ оплаты *</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="payment-card" name="payment_method" value="card" checked required>
+                    <label for="payment-card">Банковская карта</label>
                 </div>
-                
-                <!-- Оплата -->
-                <h3 id="payment">Оплата</h3>
-                <div class="form-group">
-                    <label class="form-label">Способ оплаты *</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="payment-card" name="payment-method" value="card" checked required>
-                            <label for="payment-card">Банковская карта</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="payment-cash" name="payment-method" value="cash" required>
-                            <label for="payment-cash">Наличными при получении</label>
-                        </div>
-                    </div>
+                <div class="radio-option">
+                    <input type="radio" id="payment-cash" name="payment_method" value="cash" required>
+                    <label for="payment-cash">Наличными при получении</label>
                 </div>
-                
-                <!-- Детали заказа -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="product-quantity" class="form-label">Количество комплектов *</label>
-                        <input type="number" id="product-quantity" name="product-quantity" 
-                               class="form-control" min="1" max="10" value="1" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="order-comment" class="form-label">Комментарий к заказу</label>
-                        <textarea id="order-comment" name="order-comment" 
-                                  class="form-control" rows="3"></textarea>
-                    </div>
-                </div>
-                
-                <!-- Скрытые поля -->
-                <input type="hidden" name="order-total" value="153970">
-                <input type="hidden" name="order-date" value="">
-                <input type="hidden" name="user-agent" value="">
-                
-                <!-- Кнопки -->
-                <div class="form-row">
-                    <button type="submit" class="btn btn-block">Оформить заказ</button>
-                </div>
-                
-                <div class="form-row">
-                    <button type="reset" class="btn btn-secondary btn-block">Очистить форму</button>
-                </div>
-            </form>
-        </section>
+            </div>
+        </div>
+        
+        <!-- Детали заказа -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="product-quantity" class="form-label">Количество комплектов *</label>
+                <input type="number" id="product-quantity" name="product_quantity" 
+                       class="form-control" min="1" max="10" value="1" required>
+            </div>
+            <div class="form-group">
+                <label for="order-comment" class="form-label">Комментарий к заказу</label>
+                <textarea id="order-comment" name="order_comment" 
+                          class="form-control" rows="3">Пожалуйста, аккуратно упакуйте все комплектующие</textarea>
+            </div>
+        </div>
+        
+        <!-- Скрытые поля -->
+        <input type="hidden" name="form_type" value="order_form">
+        <input type="hidden" name="order_total" value="153970">
+        <input type="hidden" name="order_date" value="">
+        <input type="hidden" name="user_agent" value="">
+        
+        <!-- Кнопки -->
+        <div class="form-row">
+            <button type="submit" class="btn btn-block">
+                <i class="fas fa-search"></i> Оформить заказ (откроется Bing)
+            </button>
+        </div>
+        
+        <div class="form-row">
+            <button type="reset" class="btn btn-secondary btn-block">Очистить форму</button>
+        </div>
+        
+        <p style="margin-top: 15px; font-size: 0.9em; color: #666; text-align: center;">
+            Все введенные данные будут видны в адресной строке Bing через символ &
+        </p>
+    </form>
+</section>
     </main>
 
     <!-- Футер -->
