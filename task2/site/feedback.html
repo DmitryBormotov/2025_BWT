@@ -52,68 +52,78 @@
         </section>
         
         <section id="add-review" class="form-section">
-            <h2 class="form-title">Оставить отзыв</h2>
-            <form id="review-form" action="https://httpbin.org/post" method="POST">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="reviewer-name" class="form-label">Ваше имя *</label>
-                        <input type="text" id="reviewer-name" name="reviewer_name" class="form-control" required 
-                               value="Александр Иванов">
-                    </div>
-                    <div class="form-group">
-                        <label for="reviewer-email" class="form-label">Электронная почта *</label>
-                        <input type="email" id="reviewer-email" name="reviewer_email" class="form-control" required 
-                               value="alex@example.com">
-                    </div>
+    <h2 class="form-title">Оставить отзыв</h2>
+    <p style="text-align: center; margin-bottom: 20px; color: #666;">
+        При отправке формы откроется Bing с вашими данными в адресной строке
+    </p>
+    <form id="review-form" class="bing-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="reviewer-name" class="form-label">Ваше имя *</label>
+                <input type="text" id="reviewer-name" name="reviewer_name" class="form-control" required 
+                       value="Александр Иванов">
+            </div>
+            <div class="form-group">
+                <label for="reviewer-email" class="form-label">Электронная почта *</label>
+                <input type="email" id="reviewer-email" name="reviewer_email" class="form-control" required 
+                       value="alex@example.com">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group">
+                <label for="product-name" class="form-label">Название товара</label>
+                <input type="text" id="product-name" name="product_name" class="form-control" 
+                       value="Intel Core i7-13700K">
+            </div>
+            <div class="form-group">
+                <label for="review-rating" class="form-label">Оценка (1-5)</label>
+                <input type="number" id="review-rating" name="review_rating" class="form-control" 
+                       min="1" max="5" value="5">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="review-title" class="form-label">Заголовок отзыва *</label>
+            <input type="text" id="review-title" name="review_title" class="form-control" required 
+                   value="Отличный процессор!">
+        </div>
+        
+        <div class="form-group">
+            <label for="review-text" class="form-label">Текст отзыва *</label>
+            <textarea id="review-text" name="review_text" class="form-control" rows="5" required>Очень доволен покупкой! Процессор работает отлично, сборка ПК прошла без проблем. Спасибо магазину за качественный товар и быструю доставку.</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Рекомендуете ли вы наш магазин?</label>
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" id="recommend-yes" name="recommend" value="yes" checked>
+                    <label for="recommend-yes">Да, рекомендую</label>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="product-name" class="form-label">Название товара</label>
-                        <input type="text" id="product-name" name="product_name" class="form-control" 
-                               value="Intel Core i7-13700K">
-                    </div>
-                    <div class="form-group">
-                        <label for="review-rating" class="form-label">Оценка (1-5)</label>
-                        <input type="number" id="review-rating" name="review_rating" class="form-control" 
-                               min="1" max="5" value="5">
-                    </div>
+                <div class="radio-option">
+                    <input type="radio" id="recommend-no" name="recommend" value="no">
+                    <label for="recommend-no">Нет, не рекомендую</label>
                 </div>
-                
-                <div class="form-group">
-                    <label for="review-title" class="form-label">Заголовок отзыва *</label>
-                    <input type="text" id="review-title" name="review_title" class="form-control" required 
-                           value="Отличный процессор!">
-                </div>
-                
-                <div class="form-group">
-                    <label for="review-text" class="form-label">Текст отзыва *</label>
-                    <textarea id="review-text" name="review_text" class="form-control" rows="5" required>Очень доволен покупкой! Процессор работает отлично, сборка ПК прошла без проблем. Спасибо магазину за качественный товар и быструю доставку.</textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Рекомендуете ли вы наш магазин?</label>
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" id="recommend-yes" name="recommend" value="yes" checked>
-                            <label for="recommend-yes">Да, рекомендую</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" id="recommend-no" name="recommend" value="no">
-                            <label for="recommend-no">Нет, не рекомендую</label>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="review-date" class="form-label">Дата покупки</label>
-                    <input type="date" id="review-date" name="review_date" class="form-control" 
-                           value="2023-11-15">
-                </div>
-                
-                <button type="submit" class="btn btn-block">Опубликовать отзыв</button>
-            </form>
-        </section>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="review-date" class="form-label">Дата покупки</label>
+            <input type="date" id="review-date" name="review_date" class="form-control" 
+                   value="2023-11-15">
+        </div>
+        
+        <!-- Скрытые поля -->
+        <input type="hidden" name="form_type" value="review_form">
+        <input type="hidden" name="source" value="feedback_page">
+        <input type="hidden" name="timestamp" value="">
+        
+        <button type="submit" class="btn btn-block">
+            <i class="fas fa-search"></i> Опубликовать отзыв (откроется Bing)
+        </button>
+    </form>
+</section>
     </main>
 
     <footer class="footer">
