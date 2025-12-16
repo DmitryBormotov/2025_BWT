@@ -706,7 +706,6 @@ window.addEventListener('load', function() {
     if (cartBtn) {
         const badge = document.createElement('span');
         badge.className = 'cart-badge';
-        cartBtn.style.position = 'relative';
         cartBtn.appendChild(badge);
         updateCartCount();
     }
