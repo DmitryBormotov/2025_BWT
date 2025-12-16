@@ -700,13 +700,15 @@ window.addEventListener('load', function() {
         }
     `;
     document.head.appendChild(style);
-    
-        // Добавить бейдж корзины
+
+    // Добавить бейдж корзины
     const cartBtn = document.querySelector('.cart-btn');
     if (cartBtn) {
         const badge = document.createElement('span');
         badge.className = 'cart-badge';
+        cartBtn.style.position = 'relative';
         cartBtn.appendChild(badge);
         updateCartCount();
     }
+
 });
