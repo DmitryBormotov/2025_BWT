@@ -632,3 +632,37 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Исправление для кнопки корзины */
+.cart-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-btn:hover {
+    text-decoration: none;
+    color: white;
+}
+
+/* Бейдж корзины */
+.cart-badge {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
+/* Позиционирование для ссылки корзины */
+.header .cart-btn {
+    position: relative;
+}
