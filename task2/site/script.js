@@ -341,14 +341,14 @@ function initProductGrid() {
         { id: 2, name: 'AMD Ryzen 9 7950X', price: 52990, category: 'Процессоры', image: './orig (1).jpg' },
         { id: 3, name: 'NVIDIA RTX 5090', price: 199990, category: 'Видеокарты', image: './s-l1600.jpg' },
         { id: 4, name: 'AMD RX 7900 XTX', price: 119990, category: 'Видеокарты', image: './orig (3).webp' },
-        { id: 5, name: 'ASUS ROG Strix Z790', price: 34990, category: 'Материнские платы', image: 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=300&h=200&fit=crop' },
+        { id: 5, name: 'ASUS ROG Strix Z790', price: 34990, category: 'Материнские платы', image: './photo_5914900029887941502_m.jpg' },
         { id: 6, name: 'Kingston Fury 32GB', price: 8990, category: 'Оперативная память', image: './orig (4).webp' },
         { id: 7, name: 'Samsung 980 Pro 2TB', price: 12990, category: 'SSD', image: './orig (5).webp' },
         { id: 8, name: 'Corsair RM850x', price: 13990, category: 'Блоки питания', image: './6571881718.jpg' },
         { id: 9, name: 'Noctua NH-D15', price: 8990, category: 'Кулеры', image: './orig (6).webp' },
-        { id: 10, name: 'Fractal Design Meshify 2', price: 15990, category: 'Корпуса', image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=300&h=200&fit=crop' },
-        { id: 11, name: 'ASUS ProArt 4K', price: 45990, category: 'Мониторы', image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=200&fit=crop' },
-        { id: 12, name: 'Logitech MX Keys', price: 8990, category: 'Периферия', image: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=200&fit=crop' }
+        { id: 10, name: 'Fractal Design Meshify 2', price: 15990, category: 'Корпуса', image: './photo_5916742085526620959_m.jpg' },
+        { id: 11, name: 'ASUS ProArt 4K', price: 45990, category: 'Мониторы', image: './photo_5914808023098526547_m.jpg' },
+        { id: 12, name: 'Logitech MX Keys', price: 8990, category: 'Периферия', image: './photo_5914650973324381108_m.jpg' }
     ];
     
     // Очистить сетку
